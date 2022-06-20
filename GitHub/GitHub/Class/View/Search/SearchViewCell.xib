@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="gOt-yc-LS6" customClass="SearchViewCell" customModule="GitHub" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gOt-yc-LS6" id="MVF-Dc-4PC">
+                <rect key="frame" x="0.0" y="0.0" width="385.5" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pLV-cG-byC">
+                        <rect key="frame" x="8" y="8.5" width="28" height="27"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="pLV-cG-byC" secondAttribute="height" multiplier="1:1" id="DEe-au-STj"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBA-6m-eMc">
+                        <rect key="frame" x="44" y="11.5" width="333.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="pLV-cG-byC" firstAttribute="top" secondItem="MVF-Dc-4PC" secondAttribute="top" constant="8" id="3Bp-hL-auK"/>
+                    <constraint firstItem="sBA-6m-eMc" firstAttribute="leading" secondItem="pLV-cG-byC" secondAttribute="trailing" constant="8" id="QMW-w9-zGM"/>
+                    <constraint firstItem="pLV-cG-byC" firstAttribute="centerY" secondItem="MVF-Dc-4PC" secondAttribute="centerY" id="bty-5p-HPb"/>
+                    <constraint firstItem="sBA-6m-eMc" firstAttribute="centerY" secondItem="MVF-Dc-4PC" secondAttribute="centerY" id="uQi-kn-2uZ"/>
+                    <constraint firstAttribute="trailing" secondItem="sBA-6m-eMc" secondAttribute="trailing" constant="8" id="vNP-fu-Fb3"/>
+                    <constraint firstItem="pLV-cG-byC" firstAttribute="leading" secondItem="MVF-Dc-4PC" secondAttribute="leading" constant="8" id="zfn-4G-hLW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="iconImageView" destination="pLV-cG-byC" id="IK7-IR-3PR"/>
+                <outlet property="nameLabel" destination="sBA-6m-eMc" id="UFC-Xp-qAV"/>
+            </connections>
+            <point key="canvasLocation" x="63.768115942028992" y="46.875"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="person.crop.circle" catalog="system" width="128" height="121"/>
+    </resources>
+</document>

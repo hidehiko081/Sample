@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="sSH-Ol-W1I" customClass="MailViewCell" customModule="EarthquakeIntensity" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sSH-Ol-W1I" id="JMQ-Ls-twz">
+                <rect key="frame" x="0.0" y="0.0" width="385.5" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uit-ap-F9P">
+                        <rect key="frame" x="10" y="10.5" width="25" height="22.5"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="ttd-dZ-hm9"/>
+                            <constraint firstAttribute="height" constant="25" id="uY3-Gc-nVh"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="お問い合わせ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfl-lK-jkz">
+                        <rect key="frame" x="45" y="11.5" width="330.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="uit-ap-F9P" firstAttribute="leading" secondItem="JMQ-Ls-twz" secondAttribute="leading" constant="10" id="LEh-Or-F6H"/>
+                    <constraint firstItem="mfl-lK-jkz" firstAttribute="leading" secondItem="uit-ap-F9P" secondAttribute="trailing" constant="10" id="bUM-dd-Xbc"/>
+                    <constraint firstItem="mfl-lK-jkz" firstAttribute="centerY" secondItem="JMQ-Ls-twz" secondAttribute="centerY" id="fjL-S2-JeT"/>
+                    <constraint firstItem="uit-ap-F9P" firstAttribute="centerY" secondItem="JMQ-Ls-twz" secondAttribute="centerY" id="ocf-dH-DrQ"/>
+                    <constraint firstAttribute="trailing" secondItem="mfl-lK-jkz" secondAttribute="trailing" constant="10" id="wFi-Yi-jml"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-129" y="92"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="mail" catalog="system" width="128" height="93"/>
+    </resources>
+</document>

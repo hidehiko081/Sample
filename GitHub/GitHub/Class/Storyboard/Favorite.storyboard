@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gDo-4n-QUU">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Favorite View Controller-->
+        <scene sceneID="PPp-Gn-cOM">
+            <objects>
+                <viewController id="gDo-4n-QUU" customClass="FavoriteViewController" customModule="GitHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fcB-uY-ddX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uDA-vM-gL7">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="gDo-4n-QUU" id="rh3-qV-6GJ"/>
+                                    <outlet property="delegate" destination="gDo-4n-QUU" id="bCv-UT-Jln"/>
+                                </connections>
+                            </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_no_data" translatesAutoresizingMaskIntoConstraints="NO" id="gKo-JL-UIT">
+                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eth-cu-3ld"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eth-cu-3ld" firstAttribute="trailing" secondItem="uDA-vM-gL7" secondAttribute="trailing" id="3OF-DM-3Lp"/>
+                            <constraint firstItem="uDA-vM-gL7" firstAttribute="top" secondItem="eth-cu-3ld" secondAttribute="top" id="70x-zm-Rmw"/>
+                            <constraint firstItem="eth-cu-3ld" firstAttribute="bottom" secondItem="uDA-vM-gL7" secondAttribute="bottom" id="7AB-78-thA"/>
+                            <constraint firstItem="gKo-JL-UIT" firstAttribute="centerY" secondItem="fcB-uY-ddX" secondAttribute="centerY" id="WV5-zk-mif"/>
+                            <constraint firstItem="gKo-JL-UIT" firstAttribute="centerX" secondItem="fcB-uY-ddX" secondAttribute="centerX" id="bqi-9e-6gF"/>
+                            <constraint firstItem="uDA-vM-gL7" firstAttribute="leading" secondItem="eth-cu-3ld" secondAttribute="leading" id="icj-el-vJX"/>
+                            <constraint firstItem="gKo-JL-UIT" firstAttribute="width" secondItem="gKo-JL-UIT" secondAttribute="height" multiplier="1:1" id="ode-is-IdK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nodataImageView" destination="gKo-JL-UIT" id="o6c-Vg-Fyg"/>
+                        <outlet property="tableView" destination="uDA-vM-gL7" id="eAA-eJ-6Me"/>
+                        <segue destination="eCD-4y-Ot4" kind="show" identifier="UserDetailViewController" id="IgL-L6-g7M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7V1-In-zaU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130" y="61"/>
+        </scene>
+        <!--UserDetail-->
+        <scene sceneID="LZj-3v-sDH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserDetail" id="eCD-4y-Ot4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="7nI-Ah-6Sg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ID-fw-lVd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="744" y="61"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_no_data" width="200" height="200"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,11 @@
+platform :ios, ’13.0’
+use_frameworks!
+
+
+target ’GitHub’ do
+  pod 'SVProgressHUD'
+  pod 'RealmSwift'
+  pod 'Alamofire'
+  pod 'AlamofireImage'
+end
+

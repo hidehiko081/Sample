@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="LSt-Pv-rTi" customClass="UserViewCell" customModule="GitHub" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LSt-Pv-rTi" id="v75-ex-amI">
+                <rect key="frame" x="0.0" y="0.0" width="385.5" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uWd-sz-cLF">
+                        <rect key="frame" x="8" y="8.5" width="28" height="27"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="uWd-sz-cLF" secondAttribute="height" multiplier="1:1" id="gaI-jt-kuQ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8WV-eL-8DY">
+                        <rect key="frame" x="44" y="11.5" width="331.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="uWd-sz-cLF" firstAttribute="centerY" secondItem="v75-ex-amI" secondAttribute="centerY" id="XYp-qm-GMK"/>
+                    <constraint firstItem="uWd-sz-cLF" firstAttribute="top" secondItem="v75-ex-amI" secondAttribute="top" constant="8" id="bXP-eJ-ZJJ"/>
+                    <constraint firstItem="8WV-eL-8DY" firstAttribute="centerY" secondItem="v75-ex-amI" secondAttribute="centerY" id="eSm-4C-9hf"/>
+                    <constraint firstItem="8WV-eL-8DY" firstAttribute="leading" secondItem="uWd-sz-cLF" secondAttribute="trailing" constant="8" id="g2I-o2-TIb"/>
+                    <constraint firstAttribute="trailing" secondItem="8WV-eL-8DY" secondAttribute="trailing" constant="8" id="tGj-wV-QMf"/>
+                    <constraint firstItem="uWd-sz-cLF" firstAttribute="leading" secondItem="v75-ex-amI" secondAttribute="leading" constant="8" id="tUY-Eo-8rC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="iconImageView" destination="uWd-sz-cLF" id="C4f-O5-C2K"/>
+                <outlet property="nameLabel" destination="8WV-eL-8DY" id="8bz-xl-beL"/>
+            </connections>
+            <point key="canvasLocation" x="63.768115942028992" y="46.875"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="person.crop.circle" catalog="system" width="128" height="121"/>
+    </resources>
+</document>
