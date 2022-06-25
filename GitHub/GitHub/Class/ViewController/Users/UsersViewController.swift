@@ -163,15 +163,10 @@ extension UsersViewController: UITableViewDataSource {
     /// セルを返す
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: UserViewCell.identifier,
-                                                    for: indexPath) as? UserViewCell {
-            
-            let model = self.getUser(index: indexPath.row)
-            cell.setup(model: model)
-            return cell
-        }
-        
-        return UITableViewCell()
+        let cell: UserViewCell = tableView.dequeueReusableCell(indexPath: indexPath)
+        let model = self.getUser(index: indexPath.row)
+        cell.setup(model: model)
+        return cell
     }
 }
 

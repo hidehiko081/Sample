@@ -68,6 +68,7 @@
 		411F03F5286725C2000A0D8D /* UsersRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411F03F4286725C2000A0D8D /* UsersRemoteDataSource.swift */; };
 		411F03F928672830000A0D8D /* NewUsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411F03F828672830000A0D8D /* NewUsersRepository.swift */; };
 		411F03FC2867289C000A0D8D /* UsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411F03FB2867289C000A0D8D /* UsersPresenter.swift */; };
+		41C058502867556E00A1CBE3 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C0584F2867556E00A1CBE3 /* UITableView+Extension.swift */; };
 		A6DB4DFBAF60F430971D0424 /* Pods_GitHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E961462AB36B514F2E3A8EFB /* Pods_GitHub.framework */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +137,7 @@
 		411F03F4286725C2000A0D8D /* UsersRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRemoteDataSource.swift; sourceTree = "<group>"; };
 		411F03F828672830000A0D8D /* NewUsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUsersRepository.swift; sourceTree = "<group>"; };
 		411F03FB2867289C000A0D8D /* UsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPresenter.swift; sourceTree = "<group>"; };
+		41C0584F2867556E00A1CBE3 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		C1E9D9121A116A0FA94C91BB /* Pods-GitHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub.release.xcconfig"; path = "Target Support Files/Pods-GitHub/Pods-GitHub.release.xcconfig"; sourceTree = "<group>"; };
 		E961462AB36B514F2E3A8EFB /* Pods_GitHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -221,6 +223,7 @@
 				0CDB04D3281B73E800CBBD96 /* UIViewController+Extension.swift */,
 				0CDB04D5281B73F600CBBD96 /* UIView+Extension.swift */,
 				0CDB04D7281B740500CBBD96 /* UIImage+Extension.swift */,
+				41C0584F2867556E00A1CBE3 /* UITableView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 			files = (
 				0CDB04F3281B961200CBBD96 /* Utility.swift in Sources */,
 				411F03F928672830000A0D8D /* NewUsersRepository.swift in Sources */,
+				41C058502867556E00A1CBE3 /* UITableView+Extension.swift in Sources */,
 				0CDB0534281C0F7900CBBD96 /* Const.swift in Sources */,
 				0CDB04D6281B73F600CBBD96 /* UIView+Extension.swift in Sources */,
 				0CDB0517281BF65600CBBD96 /* UserFavoriteRealm.swift in Sources */,
