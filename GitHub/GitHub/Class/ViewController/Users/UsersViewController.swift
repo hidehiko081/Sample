@@ -150,10 +150,14 @@ extension UsersViewController: UITableViewDataSource {
         presenter.numberOfRowsInSection
     }
 
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        45.0
+    }
+
     /// セルの高さ
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 45
+        UITableView.automaticDimension
     }
 
     /// セルを返す
