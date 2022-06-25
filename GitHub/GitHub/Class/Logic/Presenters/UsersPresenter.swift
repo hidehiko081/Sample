@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol UsersView: AnyObject {
+protocol UsersViewProtocol: AnyObject {
     var isSearchControllerActived: Bool { get }
     func reloadData()
 }
 
 protocol UsersPresenter {
     var numberOfRowsInSection: Int { get }
-    var view: UsersView? { get }
+    var view: UsersViewProtocol? { get }
     func request()
     func requestNextUsers()
     func getUser(index: Int) -> UserModel
@@ -32,9 +32,9 @@ class UsersPresenterImpl: UsersPresenter {
     /// ユーザid
     private var userId = 0
 
-    weak var view: UsersView?
+    weak var view: UsersViewProtocol?
 
-    init(usersRepository: NewUsersRepository, view: UsersView?) {
+    init(usersRepository: NewUsersRepository, view: UsersViewProtocol?) {
         self.usersRepository = usersRepository
         self.view = view
     }

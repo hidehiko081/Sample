@@ -114,7 +114,7 @@ extension UsersViewController {
 }
 
 //MARK: - UsersView
-extension UsersViewController: UsersView {
+extension UsersViewController: UsersViewProtocol {
     var isSearchControllerActived: Bool {
         self.searchController.isActive
     }
