@@ -9,20 +9,12 @@ import Foundation
 import UIKit
 
 class UsersViewController: UIViewController {
-    /// プロトコル
-    let networkProtocol = NetworkProtocolImpl()
-    /// 一覧
-    var userModels: [UserModel] = [UserModel]()
-    var showUserModels: [UserModel] = [UserModel]()
-    /// 読み込み完了
-    var isLoading = false
-    /// ユーザid
-    var userId = 0
     /// 検索
     private var searchController: UISearchController!
-    
     /// テーブル
     @IBOutlet weak var tableView: UITableView!
+
+    var presenter: UsersPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,56 +90,33 @@ extension UsersViewController {
                 forCellReuseIdentifier: identifier)
         }
     }
-    
+
     /// リクエスト
     private func request() {
-        self.requestUser(userId: self.userId)
+        presenter.request()
     }
-    
-    /// ユーザーリクエスト
-    private func requestUser(userId: Int) {
-        #if true
-        guard let url = NetworkAPI.getUsers(since: userId).getUrl()?.absoluteString else {
-            return
-        }
-        var parameters = Dictionary<String,Any>()
-        #else
-        let url = "https://api.github.com/users"
-        var parameters = Dictionary<String,Any>()
-        parameters["since"] = userId
-        #endif
-        
-        self.networkProtocol.requestUsers(url: url,
-                                          parameters: parameters,
-                                          completionHandler: {[weak self] models in
-            guard let models = models else {
-                self?.isLoading = false
-                return
-            }
-            self?.userId = userId
-            self?.userModels.append(contentsOf: models)
-            
-            self?.tableView.reloadData()
-            self?.isLoading = false
-        })
-    }
-    
+
     /// ユーザー情報取得
     private func getUser(index: Int) -> UserModel {
-        if self.searchController.isActive {
-            let model = self.showUserModels[index]
-            return model
-        }
-        
-        let model = self.userModels[index]
-        return model
+        self.presenter.getUser(index: index)
     }
-    
+
     /// 戻るボタンセットアップ
     private func setupBackBarButton(title: String?) {
         let backBarButtonItem = UIBarButtonItem()
         backBarButtonItem.title = title
         self.navigationItem.backBarButtonItem = backBarButtonItem
+    }
+}
+
+//MARK: - UsersView
+extension UsersViewController: UsersView {
+    var isSearchControllerActived: Bool {
+        self.searchController.isActive
+    }
+
+    func reloadData() {
+        tableView.reloadData()
     }
 }
 
@@ -158,13 +127,8 @@ extension UsersViewController: UIScrollViewDelegate {
         let threshold = self.tableView.contentSize.height - self.tableView.contentSize.height * 0.2
         
         if (currentPosition > threshold &&
-            self.tableView.isDragging && !self.isLoading) {
-            
-            self.isLoading = true
-            
-            if let id = self.userModels.last?.id {
-                self.requestUser(userId: id)
-            }
+            self.tableView.isDragging) {
+            self.presenter.requestNextUsers()
         }
     }
 }
@@ -175,23 +139,19 @@ extension UsersViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     /// セクション内のセル数を返す
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
-        if self.searchController.isActive {
-            return self.showUserModels.count
-        } else {
-            return self.userModels.count
-        }
+        presenter.numberOfRowsInSection
     }
-    
+
     /// セルの高さ
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 45
     }
-    
+
     /// セルを返す
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -224,12 +184,7 @@ extension UsersViewController: UITableViewDelegate {
 //MARK: - UISearchResultsUpdating
 extension UsersViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        let text = searchController.searchBar.text ?? ""
-        if text.isEmpty {
-            self.showUserModels = self.userModels
-        } else {
-            self.showUserModels = self.userModels.filter { $0.login?.contains(text) ?? false }
-        }
+        self.presenter.updateSearchResults(text: searchController.searchBar.text)
         self.tableView.reloadData()
     }
 }
@@ -238,11 +193,7 @@ extension UsersViewController: UISearchResultsUpdating {
 extension UsersViewController {
     /// 読み込みボタンタップ時
     @objc func touchUpInsideReloadButton(_ sender: AnyObject) {
-        self.userId = 0
-        self.userModels.removeAll()
-        self.showUserModels.removeAll()
-        self.request()
-        
+        self.presenter.touchUpInsideReloadButton()
         self.setupBackBarButton(title: "")
         self.performSegue(withIdentifier: SearchViewController.identifier,
                           sender: nil)
