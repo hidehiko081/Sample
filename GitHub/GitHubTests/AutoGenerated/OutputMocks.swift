@@ -26,3 +26,18 @@ class NewUsersRepositoryMock: NewUsersRepository {
     }
 }
 
+class UsersRemoteDataSourceMock: UsersRemoteDataSource {
+    init() { }
+
+
+    private(set) var requestUsersCallCount = 0
+    var requestUsersHandler: ((Int, @escaping (_ models: [UserModel]) -> Void) -> ())?
+    func requestUsers(userId: Int, completionHandler: @escaping (_ models: [UserModel]) -> Void)  {
+        requestUsersCallCount += 1
+        if let requestUsersHandler = requestUsersHandler {
+            requestUsersHandler(userId, completionHandler)
+        }
+        
+    }
+}
+

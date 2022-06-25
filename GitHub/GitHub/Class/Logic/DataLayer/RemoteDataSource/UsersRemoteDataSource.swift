@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// @mockable
 protocol UsersRemoteDataSource {
     func requestUsers(userId: Int,
                       completionHandler:@escaping (_ models: [UserModel]) -> Void)
