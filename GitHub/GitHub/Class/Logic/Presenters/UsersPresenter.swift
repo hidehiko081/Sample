@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// @mockable
 protocol UsersViewProtocol: AnyObject {
     var isSearchControllerActived: Bool { get }
     func reloadData()

@@ -11,6 +11,27 @@ import UIKit
 @testable import GitHub
 
 
+class UsersViewProtocolMock: UsersViewProtocol {
+    init() { }
+    init(isSearchControllerActived: Bool = false) {
+        self.isSearchControllerActived = isSearchControllerActived
+    }
+
+
+    private(set) var isSearchControllerActivedSetCallCount = 0
+    var isSearchControllerActived: Bool = false { didSet { isSearchControllerActivedSetCallCount += 1 } }
+
+    private(set) var reloadDataCallCount = 0
+    var reloadDataHandler: (() -> ())?
+    func reloadData()  {
+        reloadDataCallCount += 1
+        if let reloadDataHandler = reloadDataHandler {
+            reloadDataHandler()
+        }
+        
+    }
+}
+
 class NewUsersRepositoryMock: NewUsersRepository {
     init() { }
 
