@@ -9,9 +9,6 @@ import Foundation
 import UIKit
 
 protocol NetworkProtocol {
-    func requestUsers(url: String,
-                      parameters: [String: Any]?,
-                      completionHandler:@escaping (_ models: [UserModel]?) -> Void)
 }
 
 struct NetworkProtocolImpl: NetworkProtocol {
