@@ -81,6 +81,7 @@ class UsersPresenterImpl: UsersPresenter {
         } else {
             self.showUserModels = self.userModels.filter { $0.login?.contains(text ?? "") ?? false }
         }
+        self.view?.reloadData()
     }
 
     func touchUpInsideReloadButton() {

@@ -193,7 +193,6 @@ extension UsersViewController: UITableViewDelegate {
 extension UsersViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         self.presenter.updateSearchResults(text: searchController.searchBar.text)
-        self.tableView.reloadData()
     }
 }
 
