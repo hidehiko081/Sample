@@ -14,6 +14,7 @@ protocol UsersView: AnyObject {
 
 protocol UsersPresenter {
     var numberOfRowsInSection: Int { get }
+    var view: UsersView? { get }
     func request()
     func requestNextUsers()
     func getUser(index: Int) -> UserModel
@@ -21,7 +22,7 @@ protocol UsersPresenter {
     func touchUpInsideReloadButton()
 }
 
-class UsersPresenterImpl {
+class UsersPresenterImpl: UsersPresenter {
     private let usersRepository: NewUsersRepository
     /// 一覧
     private var userModels: [UserModel] = [UserModel]()
@@ -32,6 +33,11 @@ class UsersPresenterImpl {
     private var userId = 0
 
     weak var view: UsersView?
+
+    init(usersRepository: NewUsersRepository, view: UsersView?) {
+        self.usersRepository = usersRepository
+        self.view = view
+    }
 
     var numberOfRowsInSection: Int {
         if isSearchControllerActived {
@@ -89,13 +95,13 @@ class UsersPresenterImpl {
             return
         }
 
-        self.userId = userId
         isLoading = true
-        usersRepository.requestUsers(userId: self.userId) { [weak self] models in
+        usersRepository.requestUsers(userId: userId) { [weak self] models in
             guard let self = self else {
                 return
             }
 
+            self.userId = userId
             self.userModels.append(contentsOf: models)
             self.view?.reloadData()
             self.isLoading = false

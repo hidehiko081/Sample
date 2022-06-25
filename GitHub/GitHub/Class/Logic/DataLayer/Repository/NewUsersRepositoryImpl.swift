@@ -7,8 +7,12 @@
 
 import Foundation
 
-struct NewUsersRepositoryImpl {
+struct NewUsersRepositoryImpl: NewUsersRepository {
     private let remoteDataSource: UsersRemoteDataSource
+
+    init(remoteDataSource: UsersRemoteDataSource) {
+        self.remoteDataSource = remoteDataSource
+    }
 
     func requestUsers(userId: Int,
                       completionHandler:@escaping (_ models: [UserModel]) -> Void) {
