@@ -21,10 +21,6 @@ class UsersViewController: UIViewController {
 
         self.setup()
     }
-
-    deinit {
-        print("")
-    }
 }
 
 //MARK: - Segue
