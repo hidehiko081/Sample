@@ -22,8 +22,7 @@ class SearchViewController: UIViewController {
     var displayPage = 1
     /// 検索ワード
     var searchWord: String?
-    
-    
+
     /// テーブル
     @IBOutlet weak var tableView: UITableView!
     /// no data

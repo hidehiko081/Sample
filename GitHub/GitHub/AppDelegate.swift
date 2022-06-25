@@ -13,16 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let initialViewController = storyboard.instantiateInitialViewController() as? UINavigationController,
-              let usersViewController = initialViewController.topViewController as? UsersViewController else {
-            fatalError()
-        }
-
-        self.window?.rootViewController = initialViewController
-        self.window?.makeKeyAndVisible()
-
         return true
     }
 
