@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UserModel {
+struct UserModel: Decodable {
     let login: String?
     let id: Int?
     let nodeId: String?
@@ -26,44 +26,6 @@ class UserModel {
     let receivedEventsUrl: String?
     let type: String?
     let siteAdmin: Bool?
-    
-    init(login: String?,
-         id: Int?,
-         nodeId: String?,
-         avatarUrl: String?,
-         gravatarId: String?,
-         url: String?,
-         htmlUrl: String?,
-         followersUrl: String?,
-         followingUrl: String?,
-         gistsUrl: String?,
-         starredUrl: String?,
-         subscriptionsUrl: String?,
-         organizationsUrl: String?,
-         reposUrl: String?,
-         eventsUrl: String?,
-         receivedEventsUrl: String?,
-         type: String?,
-         siteAdmin: Bool?) {
-        self.login = login
-        self.id = id
-        self.nodeId = nodeId
-        self.avatarUrl = avatarUrl
-        self.gravatarId = gravatarId
-        self.url = url
-        self.htmlUrl = htmlUrl
-        self.followersUrl = followersUrl
-        self.followingUrl = followingUrl
-        self.gistsUrl = gistsUrl
-        self.starredUrl = starredUrl
-        self.subscriptionsUrl = subscriptionsUrl
-        self.organizationsUrl = organizationsUrl
-        self.reposUrl = reposUrl
-        self.eventsUrl = eventsUrl
-        self.receivedEventsUrl = receivedEventsUrl
-        self.type = type
-        self.siteAdmin = siteAdmin
-    }
 }
 
 enum FollowType: Int {
