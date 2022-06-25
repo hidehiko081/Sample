@@ -65,6 +65,10 @@
 		0CDB0530281C0F5D00CBBD96 /* ShareViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CDB0528281C0F5D00CBBD96 /* ShareViewCell.xib */; };
 		0CDB0532281C0F5D00CBBD96 /* EvaluationViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CDB052A281C0F5D00CBBD96 /* EvaluationViewCell.xib */; };
 		0CDB0534281C0F7900CBBD96 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB0533281C0F7900CBBD96 /* Const.swift */; };
+		411F03F3286723E5000A0D8D /* NewUsersRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411F03F2286723E5000A0D8D /* NewUsersRepositoryImpl.swift */; };
+		411F03F5286725C2000A0D8D /* UsersRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411F03F4286725C2000A0D8D /* UsersRemoteDataSource.swift */; };
+		411F03F928672830000A0D8D /* NewUsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411F03F828672830000A0D8D /* NewUsersRepository.swift */; };
+		411F03FC2867289C000A0D8D /* UsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411F03FB2867289C000A0D8D /* UsersPresenter.swift */; };
 		A6DB4DFBAF60F430971D0424 /* Pods_GitHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E961462AB36B514F2E3A8EFB /* Pods_GitHub.framework */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +134,10 @@
 		0CDB052A281C0F5D00CBBD96 /* EvaluationViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvaluationViewCell.xib; sourceTree = "<group>"; };
 		0CDB0533281C0F7900CBBD96 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		192E4823D4C45E136063D6B7 /* Pods-GitHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub.debug.xcconfig"; path = "Target Support Files/Pods-GitHub/Pods-GitHub.debug.xcconfig"; sourceTree = "<group>"; };
+		411F03F2286723E5000A0D8D /* NewUsersRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUsersRepositoryImpl.swift; sourceTree = "<group>"; };
+		411F03F4286725C2000A0D8D /* UsersRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRemoteDataSource.swift; sourceTree = "<group>"; };
+		411F03F828672830000A0D8D /* NewUsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUsersRepository.swift; sourceTree = "<group>"; };
+		411F03FB2867289C000A0D8D /* UsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPresenter.swift; sourceTree = "<group>"; };
 		C1E9D9121A116A0FA94C91BB /* Pods-GitHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub.release.xcconfig"; path = "Target Support Files/Pods-GitHub/Pods-GitHub.release.xcconfig"; sourceTree = "<group>"; };
 		E961462AB36B514F2E3A8EFB /* Pods_GitHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -238,20 +246,22 @@
 		0CDB04B8281B6C5C00CBBD96 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				0CDB04B9281B6C5C00CBBD96 /* Domain Layer */,
-				0CDB04BE281B6C5C00CBBD96 /* Data Layer */,
+				411F03FA28672879000A0D8D /* Presenters */,
+				0CDB04B9281B6C5C00CBBD96 /* DomainLayer */,
+				0CDB04BE281B6C5C00CBBD96 /* DataLayer */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
 		};
-		0CDB04B9281B6C5C00CBBD96 /* Domain Layer */ = {
+		0CDB04B9281B6C5C00CBBD96 /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
+				411F03F728672814000A0D8D /* Repository */,
 				0CDB04BA281B6C5C00CBBD96 /* Translator */,
 				0CDB04BC281B6C5C00CBBD96 /* Model */,
 				0CDB04BD281B6C5C00CBBD96 /* UseCase */,
 			);
-			path = "Domain Layer";
+			path = DomainLayer;
 			sourceTree = "<group>";
 		};
 		0CDB04BA281B6C5C00CBBD96 /* Translator */ = {
@@ -294,20 +304,22 @@
 			path = UseCase;
 			sourceTree = "<group>";
 		};
-		0CDB04BE281B6C5C00CBBD96 /* Data Layer */ = {
+		0CDB04BE281B6C5C00CBBD96 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				411F03F62867260B000A0D8D /* RemoteDataSource */,
 				0CDB04BF281B6C5C00CBBD96 /* Repository */,
 				0CDB04C0281B6C5C00CBBD96 /* Entity */,
 				0CDB04C1281B6C5C00CBBD96 /* Networking */,
 			);
-			path = "Data Layer";
+			path = DataLayer;
 			sourceTree = "<group>";
 		};
 		0CDB04BF281B6C5C00CBBD96 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
 				0CDB050E281BF03200CBBD96 /* UserRepository.swift */,
+				411F03F2286723E5000A0D8D /* NewUsersRepositoryImpl.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -470,6 +482,30 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		411F03F62867260B000A0D8D /* RemoteDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				411F03F4286725C2000A0D8D /* UsersRemoteDataSource.swift */,
+			);
+			path = RemoteDataSource;
+			sourceTree = "<group>";
+		};
+		411F03F728672814000A0D8D /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				411F03F828672830000A0D8D /* NewUsersRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		411F03FA28672879000A0D8D /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				411F03FB2867289C000A0D8D /* UsersPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
 		4BCBB31B0B90672A9CE3123B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -618,6 +654,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CDB04F3281B961200CBBD96 /* Utility.swift in Sources */,
+				411F03F928672830000A0D8D /* NewUsersRepository.swift in Sources */,
 				0CDB0534281C0F7900CBBD96 /* Const.swift in Sources */,
 				0CDB04D6281B73F600CBBD96 /* UIView+Extension.swift in Sources */,
 				0CDB0517281BF65600CBBD96 /* UserFavoriteRealm.swift in Sources */,
@@ -628,6 +665,8 @@
 				0CDB04CE281B6CFA00CBBD96 /* NetworkRequest.swift in Sources */,
 				0CDB04A6281B6BE200CBBD96 /* ViewController.swift in Sources */,
 				0CDB052E281C0F5D00CBBD96 /* EvaluationViewCell.swift in Sources */,
+				411F03F5286725C2000A0D8D /* UsersRemoteDataSource.swift in Sources */,
+				411F03FC2867289C000A0D8D /* UsersPresenter.swift in Sources */,
 				0CDB04D8281B740500CBBD96 /* UIImage+Extension.swift in Sources */,
 				0CDB04F1281B935200CBBD96 /* UserDetailRepositoryViewCell.swift in Sources */,
 				0CDB052F281C0F5D00CBBD96 /* ShareViewCell.swift in Sources */,
@@ -645,6 +684,7 @@
 				0CDB04CC281B6CD600CBBD96 /* NetworkProtocol.swift in Sources */,
 				0CDB04DD281B743B00CBBD96 /* UserViewCell.swift in Sources */,
 				0CDB050D281BF02600CBBD96 /* UserUseCase.swift in Sources */,
+				411F03F3286723E5000A0D8D /* NewUsersRepositoryImpl.swift in Sources */,
 				0CDB04A2281B6BE200CBBD96 /* AppDelegate.swift in Sources */,
 				0CDB04FA281BAA5C00CBBD96 /* WebViewController.swift in Sources */,
 				0CDB04FF281BC38600CBBD96 /* FollowViewController.swift in Sources */,
