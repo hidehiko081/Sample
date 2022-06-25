@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// @mockable
 protocol NewUsersRepository {
     func requestUsers(userId: Int,
                       completionHandler:@escaping (_ models: [UserModel]) -> Void)
