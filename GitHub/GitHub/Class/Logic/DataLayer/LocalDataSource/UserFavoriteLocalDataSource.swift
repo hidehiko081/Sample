@@ -8,14 +8,14 @@
 import Foundation
 import RealmSwift
 
-protocol UserFavoriteLocalDataSource: Actor {
+protocol UserFavoriteLocalDataSource {
     func saveFavorite(model: UserFavoriteModel) -> Result<Void, Error>
     func getFavorite(userId: Int) -> Result<UserFavoriteModel?, Error>
     func getAllFavorites() -> Result<[UserFavoriteModel], Error>
-    func deleteFavorite(id: Int) -> Result<Void, Error>
+    func deleteFavorite(userId: Int) -> Result<Void, Error>
 }
 
-actor UserFavoriteLocalDataSourceImpl: UserFavoriteLocalDataSource {
+struct UserFavoriteLocalDataSourceImpl: UserFavoriteLocalDataSource {
 
     func saveFavorite(model: UserFavoriteModel) -> Result<Void, Error> {
         do {
@@ -40,7 +40,8 @@ actor UserFavoriteLocalDataSourceImpl: UserFavoriteLocalDataSource {
     func getFavorite(userId: Int) -> Result<UserFavoriteModel?, Error> {
         do {
             let realm = try Realm()
-            guard let realmObject = realm.objects(UserFavoriteRealm.self).filter("userId = " + String(userId)).first else {
+            guard let realmObject = realm.objects(UserFavoriteRealm.self).first(where: { $0.userId == userId
+            }) else {
                 return .success(nil)
             }
 
@@ -60,10 +61,10 @@ actor UserFavoriteLocalDataSourceImpl: UserFavoriteLocalDataSource {
         }
     }
 
-    func deleteFavorite(id: Int) -> Result<Void, Error> {
+    func deleteFavorite(userId: Int) -> Result<Void, Error> {
         do {
             let realm = try Realm()
-            guard let realmObject = realm.objects(UserFavoriteRealm.self).first(where: { $0.getPrimaryID() == id
+            guard let realmObject = realm.objects(UserFavoriteRealm.self).first(where: { $0.userId == userId
             }) else {
                 return .success(())
             }
@@ -82,7 +83,6 @@ actor UserFavoriteLocalDataSourceImpl: UserFavoriteLocalDataSource {
 private extension UserFavoriteModel {
     init(realm: UserFavoriteRealm) {
         self.init(
-            id: realm.getPrimaryID(),
             login: realm.login,
             userId: realm.userId,
             avatarUrl: realm.avatarUrl,

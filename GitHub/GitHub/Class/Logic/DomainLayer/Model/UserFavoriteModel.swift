@@ -8,7 +8,6 @@
 import Foundation
 
 struct UserFavoriteModel {
-    let id: Int?
     let login: String?
     let userId: Int
     let avatarUrl: String?

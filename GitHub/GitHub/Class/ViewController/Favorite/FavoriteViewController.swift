@@ -34,6 +34,8 @@ class FavoriteViewController: UIViewController {
 extension FavoriteViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let viewController = segue.destination as? UserDetailViewController {
+            // TODO: presenterをセットする形にする
+            viewController.favoriteRepository = UserFavoriteRepositoryImpl(localDataSource: UserFavoriteLocalDataSourceImpl())
             if let model = sender as? UserModel {
                 viewController.model = model
             }

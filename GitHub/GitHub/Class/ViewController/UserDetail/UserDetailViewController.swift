@@ -13,8 +13,10 @@ import SVProgressHUD
 class UserDetailViewController: UIViewController {
     /// プロトコル
     let networkProtocol = NetworkProtocolImpl()
-    /// ユースケース
-    let userUseCase = UserUseCaseImpl()
+
+    // TODO: presenterがrepositoryをもつ形にする
+    var favoriteRepository: UserFavoriteRepository!
+
     /// ユーザー
     var model: UserModel?
     /// 詳細
@@ -25,6 +27,7 @@ class UserDetailViewController: UIViewController {
     var isLoading = false
     /// ページ数
     var displayPage = 1
+
     
     /// no data
     @IBOutlet weak var nodataImageView: UIImageView!
@@ -224,9 +227,14 @@ extension UserDetailViewController {
         guard let id = self.model?.id else {
             return false
         }
-        
-        let model = self.userUseCase.getFavorite(userId: id)
-        return model != nil ? true : false
+
+        let result = favoriteRepository.getFavorite(userId: id)
+        switch result {
+        case .success(let model):
+            return model != nil ? true : false
+        case .failure:
+            return false
+        }
     }
 }
 
@@ -325,22 +333,23 @@ extension UserDetailViewController {
         guard let userId = model.id else {
             return
         }
+
+        let result: Result<Void, Error>
         if self.getFavorite() {
-            self.userUseCase.deleteFavorite(userId: userId) { result in
-                if result {
-                    self.updateFavoriteButton()
-                }
-            }
+            result = self.favoriteRepository.deleteFavorite(userId: userId)
         } else {
-            self.userUseCase.saveFavorite(model: UserFavoriteModel(id: nil,
-                                                                   login: model.login,
-                                                                   userId: userId,
-                                                                   avatarUrl: model.avatarUrl,
-                                                                   name: nil)) { result, model in
-                if result {
-                    self.updateFavoriteButton()
-                }
-            }
+            result = self.favoriteRepository.saveFavorite(
+                model: UserFavoriteModel(
+                    login: model.login,
+                    userId: userId,
+                    avatarUrl: model.avatarUrl,
+                    name: nil
+                )
+            )
+        }
+
+        if case .success = result {
+            self.updateFavoriteButton()
         }
     }
     

@@ -45,6 +45,8 @@ class SearchViewController: UIViewController {
 extension SearchViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let viewController = segue.destination as? UserDetailViewController {
+            // TODO: presenterをセットする形にする
+            viewController.favoriteRepository = UserFavoriteRepositoryImpl(localDataSource: UserFavoriteLocalDataSourceImpl())
             if let model = sender as? UserModel {
                 viewController.model = model
             }

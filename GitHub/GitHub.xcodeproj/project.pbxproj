@@ -66,6 +66,8 @@
 		0CDB0534281C0F7900CBBD96 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB0533281C0F7900CBBD96 /* Const.swift */; };
 		4106B3FA2869C5A0004C62C3 /* UserFavoriteLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4106B3F92869C5A0004C62C3 /* UserFavoriteLocalDataSource.swift */; };
 		4106B3FD2869CB9E004C62C3 /* RealmResults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4106B3FC2869CB9E004C62C3 /* RealmResults+Extension.swift */; };
+		4106B3FF2869D27F004C62C3 /* UserFavoriteRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4106B3FE2869D27F004C62C3 /* UserFavoriteRepositoryImpl.swift */; };
+		4106B4012869D383004C62C3 /* UserFavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4106B4002869D383004C62C3 /* UserFavoriteRepository.swift */; };
 		411F03F3286723E5000A0D8D /* NewUsersRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411F03F2286723E5000A0D8D /* NewUsersRepositoryImpl.swift */; };
 		411F03F5286725C2000A0D8D /* UsersRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411F03F4286725C2000A0D8D /* UsersRemoteDataSource.swift */; };
 		411F03F928672830000A0D8D /* NewUsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411F03F828672830000A0D8D /* NewUsersRepository.swift */; };
@@ -151,6 +153,8 @@
 		230740FC7AFC27B57E9C5143 /* Pods-GitHubTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubTests.debug.xcconfig"; path = "Target Support Files/Pods-GitHubTests/Pods-GitHubTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4106B3F92869C5A0004C62C3 /* UserFavoriteLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavoriteLocalDataSource.swift; sourceTree = "<group>"; };
 		4106B3FC2869CB9E004C62C3 /* RealmResults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmResults+Extension.swift"; sourceTree = "<group>"; };
+		4106B3FE2869D27F004C62C3 /* UserFavoriteRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavoriteRepositoryImpl.swift; sourceTree = "<group>"; };
+		4106B4002869D383004C62C3 /* UserFavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavoriteRepository.swift; sourceTree = "<group>"; };
 		411F03F2286723E5000A0D8D /* NewUsersRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUsersRepositoryImpl.swift; sourceTree = "<group>"; };
 		411F03F4286725C2000A0D8D /* UsersRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRemoteDataSource.swift; sourceTree = "<group>"; };
 		411F03F828672830000A0D8D /* NewUsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUsersRepository.swift; sourceTree = "<group>"; };
@@ -354,6 +358,7 @@
 			children = (
 				0CDB050E281BF03200CBBD96 /* UserRepository.swift */,
 				411F03F2286723E5000A0D8D /* NewUsersRepositoryImpl.swift */,
+				4106B3FE2869D27F004C62C3 /* UserFavoriteRepositoryImpl.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -537,6 +542,7 @@
 			isa = PBXGroup;
 			children = (
 				411F03F828672830000A0D8D /* NewUsersRepository.swift */,
+				4106B4002869D383004C62C3 /* UserFavoriteRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -833,6 +839,7 @@
 				0CDB0513281BF04F00CBBD96 /* UserFavoriteModel.swift in Sources */,
 				0CDB04CE281B6CFA00CBBD96 /* NetworkRequest.swift in Sources */,
 				0CDB04A6281B6BE200CBBD96 /* ViewController.swift in Sources */,
+				4106B4012869D383004C62C3 /* UserFavoriteRepository.swift in Sources */,
 				0CDB052E281C0F5D00CBBD96 /* EvaluationViewCell.swift in Sources */,
 				411F03F5286725C2000A0D8D /* UsersRemoteDataSource.swift in Sources */,
 				411F03FC2867289C000A0D8D /* UsersPresenter.swift in Sources */,
@@ -858,6 +865,7 @@
 				0CDB04FA281BAA5C00CBBD96 /* WebViewController.swift in Sources */,
 				0CDB04FF281BC38600CBBD96 /* FollowViewController.swift in Sources */,
 				0CDB04A4281B6BE200CBBD96 /* SceneDelegate.swift in Sources */,
+				4106B3FF2869D27F004C62C3 /* UserFavoriteRepositoryImpl.swift in Sources */,
 				0CDB04E6281B829000CBBD96 /* UserDetailViewController.swift in Sources */,
 				0CDB04D2281B73DB00CBBD96 /* UIBarButtonItem+Extension.swift in Sources */,
 				0CDB04D4281B73E800CBBD96 /* UIViewController+Extension.swift in Sources */,
