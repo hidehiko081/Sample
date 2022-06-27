@@ -332,7 +332,8 @@ extension UserDetailViewController {
                 }
             }
         } else {
-            self.userUseCase.saveFavorite(model: UserFavoriteModel(login: model.login,
+            self.userUseCase.saveFavorite(model: UserFavoriteModel(id: nil,
+                                                                   login: model.login,
                                                                    userId: userId,
                                                                    avatarUrl: model.avatarUrl,
                                                                    name: nil)) { result, model in

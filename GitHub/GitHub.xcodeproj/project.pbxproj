@@ -65,6 +65,7 @@
 		0CDB0532281C0F5D00CBBD96 /* EvaluationViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CDB052A281C0F5D00CBBD96 /* EvaluationViewCell.xib */; };
 		0CDB0534281C0F7900CBBD96 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB0533281C0F7900CBBD96 /* Const.swift */; };
 		4106B3FA2869C5A0004C62C3 /* UserFavoriteLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4106B3F92869C5A0004C62C3 /* UserFavoriteLocalDataSource.swift */; };
+		4106B3FD2869CB9E004C62C3 /* RealmResults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4106B3FC2869CB9E004C62C3 /* RealmResults+Extension.swift */; };
 		411F03F3286723E5000A0D8D /* NewUsersRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411F03F2286723E5000A0D8D /* NewUsersRepositoryImpl.swift */; };
 		411F03F5286725C2000A0D8D /* UsersRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411F03F4286725C2000A0D8D /* UsersRemoteDataSource.swift */; };
 		411F03F928672830000A0D8D /* NewUsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411F03F828672830000A0D8D /* NewUsersRepository.swift */; };
@@ -149,6 +150,7 @@
 		192E4823D4C45E136063D6B7 /* Pods-GitHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub.debug.xcconfig"; path = "Target Support Files/Pods-GitHub/Pods-GitHub.debug.xcconfig"; sourceTree = "<group>"; };
 		230740FC7AFC27B57E9C5143 /* Pods-GitHubTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubTests.debug.xcconfig"; path = "Target Support Files/Pods-GitHubTests/Pods-GitHubTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4106B3F92869C5A0004C62C3 /* UserFavoriteLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavoriteLocalDataSource.swift; sourceTree = "<group>"; };
+		4106B3FC2869CB9E004C62C3 /* RealmResults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmResults+Extension.swift"; sourceTree = "<group>"; };
 		411F03F2286723E5000A0D8D /* NewUsersRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUsersRepositoryImpl.swift; sourceTree = "<group>"; };
 		411F03F4286725C2000A0D8D /* UsersRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRemoteDataSource.swift; sourceTree = "<group>"; };
 		411F03F828672830000A0D8D /* NewUsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUsersRepository.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				0CDB04D5281B73F600CBBD96 /* UIView+Extension.swift */,
 				0CDB04D7281B740500CBBD96 /* UIImage+Extension.swift */,
 				41C0584F2867556E00A1CBE3 /* UITableView+Extension.swift */,
+				4106B3FC2869CB9E004C62C3 /* RealmResults+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -341,7 +344,6 @@
 				4106B3FB2869C5AA004C62C3 /* LocalDataSource */,
 				411F03F62867260B000A0D8D /* RemoteDataSource */,
 				0CDB04BF281B6C5C00CBBD96 /* Repository */,
-				0CDB04C0281B6C5C00CBBD96 /* RealmObject */,
 				0CDB04C1281B6C5C00CBBD96 /* Networking */,
 			);
 			path = DataLayer;
@@ -517,6 +519,7 @@
 		4106B3FB2869C5AA004C62C3 /* LocalDataSource */ = {
 			isa = PBXGroup;
 			children = (
+				0CDB04C0281B6C5C00CBBD96 /* RealmObject */,
 				4106B3F92869C5A0004C62C3 /* UserFavoriteLocalDataSource.swift */,
 			);
 			path = LocalDataSource;
@@ -817,6 +820,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4106B3FD2869CB9E004C62C3 /* RealmResults+Extension.swift in Sources */,
 				0CDB04F3281B961200CBBD96 /* Utility.swift in Sources */,
 				411F03F928672830000A0D8D /* NewUsersRepository.swift in Sources */,
 				41C058502867556E00A1CBE3 /* UITableView+Extension.swift in Sources */,

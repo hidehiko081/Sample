@@ -10,7 +10,8 @@ import RealmSwift
 
 struct UserFavoriteTranslator: Translator {
     func translate(_ realm: UserFavoriteRealm) -> UserFavoriteModel {
-        let model = UserFavoriteModel(login: realm.login,
+        let model = UserFavoriteModel(id: realm.getPrimaryID(),
+                                      login: realm.login,
                                       userId: realm.userId,
                                       avatarUrl: realm.avatarUrl,
                                       name: realm.name)
