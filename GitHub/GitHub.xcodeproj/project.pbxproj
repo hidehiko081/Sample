@@ -64,6 +64,7 @@
 		0CDB0530281C0F5D00CBBD96 /* ShareViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CDB0528281C0F5D00CBBD96 /* ShareViewCell.xib */; };
 		0CDB0532281C0F5D00CBBD96 /* EvaluationViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CDB052A281C0F5D00CBBD96 /* EvaluationViewCell.xib */; };
 		0CDB0534281C0F7900CBBD96 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB0533281C0F7900CBBD96 /* Const.swift */; };
+		4106B3FA2869C5A0004C62C3 /* UserFavoriteLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4106B3F92869C5A0004C62C3 /* UserFavoriteLocalDataSource.swift */; };
 		411F03F3286723E5000A0D8D /* NewUsersRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411F03F2286723E5000A0D8D /* NewUsersRepositoryImpl.swift */; };
 		411F03F5286725C2000A0D8D /* UsersRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411F03F4286725C2000A0D8D /* UsersRemoteDataSource.swift */; };
 		411F03F928672830000A0D8D /* NewUsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411F03F828672830000A0D8D /* NewUsersRepository.swift */; };
@@ -147,6 +148,7 @@
 		0CDB0533281C0F7900CBBD96 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		192E4823D4C45E136063D6B7 /* Pods-GitHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub.debug.xcconfig"; path = "Target Support Files/Pods-GitHub/Pods-GitHub.debug.xcconfig"; sourceTree = "<group>"; };
 		230740FC7AFC27B57E9C5143 /* Pods-GitHubTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubTests.debug.xcconfig"; path = "Target Support Files/Pods-GitHubTests/Pods-GitHubTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4106B3F92869C5A0004C62C3 /* UserFavoriteLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavoriteLocalDataSource.swift; sourceTree = "<group>"; };
 		411F03F2286723E5000A0D8D /* NewUsersRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUsersRepositoryImpl.swift; sourceTree = "<group>"; };
 		411F03F4286725C2000A0D8D /* UsersRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRemoteDataSource.swift; sourceTree = "<group>"; };
 		411F03F828672830000A0D8D /* NewUsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUsersRepository.swift; sourceTree = "<group>"; };
@@ -336,9 +338,10 @@
 		0CDB04BE281B6C5C00CBBD96 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				4106B3FB2869C5AA004C62C3 /* LocalDataSource */,
 				411F03F62867260B000A0D8D /* RemoteDataSource */,
 				0CDB04BF281B6C5C00CBBD96 /* Repository */,
-				0CDB04C0281B6C5C00CBBD96 /* Entity */,
+				0CDB04C0281B6C5C00CBBD96 /* RealmObject */,
 				0CDB04C1281B6C5C00CBBD96 /* Networking */,
 			);
 			path = DataLayer;
@@ -353,12 +356,12 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
-		0CDB04C0281B6C5C00CBBD96 /* Entity */ = {
+		0CDB04C0281B6C5C00CBBD96 /* RealmObject */ = {
 			isa = PBXGroup;
 			children = (
 				0CDB0516281BF65600CBBD96 /* UserFavoriteRealm.swift */,
 			);
-			path = Entity;
+			path = RealmObject;
 			sourceTree = "<group>";
 		};
 		0CDB04C1281B6C5C00CBBD96 /* Networking */ = {
@@ -509,6 +512,14 @@
 				0CDB0528281C0F5D00CBBD96 /* ShareViewCell.xib */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		4106B3FB2869C5AA004C62C3 /* LocalDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				4106B3F92869C5A0004C62C3 /* UserFavoriteLocalDataSource.swift */,
+			);
+			path = LocalDataSource;
 			sourceTree = "<group>";
 		};
 		411F03F62867260B000A0D8D /* RemoteDataSource */ = {
@@ -846,6 +857,7 @@
 				0CDB04E6281B829000CBBD96 /* UserDetailViewController.swift in Sources */,
 				0CDB04D2281B73DB00CBBD96 /* UIBarButtonItem+Extension.swift in Sources */,
 				0CDB04D4281B73E800CBBD96 /* UIViewController+Extension.swift in Sources */,
+				4106B3FA2869C5A0004C62C3 /* UserFavoriteLocalDataSource.swift in Sources */,
 				0CDB04F7281B9AC500CBBD96 /* UserRepositoryTranslator.swift in Sources */,
 				0CDB050B281BF00500CBBD96 /* FavoriteViewController.swift in Sources */,
 				0CDB04CA281B6CB400CBBD96 /* NetworkAPIConst.swift in Sources */,
