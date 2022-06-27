@@ -11,7 +11,7 @@ import QuartzCore
 import AlamofireImage
 
 
-class UserViewCell:  UITableViewCell {
+class UserViewCell: UITableViewCell, UITableViewCellWithIdentifier {
     /// ユーザー情報
     var model: UserModel?
     

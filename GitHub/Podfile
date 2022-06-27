@@ -1,11 +1,18 @@
 platform :ios, ’13.0’
 use_frameworks!
 
-
-target ’GitHub’ do
+def install_pods
   pod 'SVProgressHUD'
   pod 'RealmSwift'
   pod 'Alamofire'
   pod 'AlamofireImage'
+end
+
+target ’GitHub’ do
+  install_pods
+end
+
+target 'GitHubTests' do
+  install_pods
 end
 
